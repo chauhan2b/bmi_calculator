@@ -6,6 +6,8 @@ const genderTextStyle = TextStyle(
   fontWeight: FontWeight.bold,
 );
 
+const iconColor = Colors.white;
+
 class IconContent extends StatelessWidget {
   IconContent({this.gender, this.icon});
 
@@ -20,7 +22,7 @@ class IconContent extends StatelessWidget {
         Icon(
           icon,
           size: 80.0,
-          color: Color(0xFF8D8E98),
+          color: iconColor,
         ),
         SizedBox(
           height: 15.0,
