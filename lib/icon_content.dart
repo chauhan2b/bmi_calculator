@@ -23,7 +23,7 @@ class IconContent extends StatelessWidget {
         ),
         Text(
           gender,
-          style: kGenderTextStyle,
+          style: kLabelTextStyle,
         )
       ],
     );
