@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../constants.dart';
 import '../components/reusable_card.dart';
 import '../components/bottom_button.dart';
-import '../calculator_briain.dart';
 
 class ResultsPage extends StatelessWidget {
   ResultsPage(
