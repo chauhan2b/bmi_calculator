@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
 class ReusableCard extends StatelessWidget {
-  ReusableCard({@required this.colour, this.cardChild, this.onPress});
+  ReusableCard(
+      {@required this.colour, this.cardChild, this.onPress, this.margin});
 
   final Color colour;
   final Widget cardChild;
   final Function onPress;
+  final EdgeInsetsGeometry margin;
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +15,7 @@ class ReusableCard extends StatelessWidget {
       onTap: onPress,
       child: Container(
         child: cardChild,
-        margin: EdgeInsets.all(15.0),
+        margin: margin,
         decoration: BoxDecoration(
           color: colour,
           borderRadius: BorderRadius.circular(10.0),

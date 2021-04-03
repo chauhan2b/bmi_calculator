@@ -1,4 +1,3 @@
-import 'package:bmi_calculator/calculator_brain.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -6,6 +5,7 @@ import '../components/icon_content.dart';
 import '../components/reusable_card.dart';
 import '../components/bottom_button.dart';
 import '../components/icon_button.dart';
+import '../calculator_brain.dart';
 import '../constants.dart';
 import './results_page.dart';
 
@@ -29,7 +29,6 @@ class _InputPageState extends State<InputPage> {
         centerTitle: true,
         title: Text(
           'BMI CALCULATOR',
-          style: TextStyle(letterSpacing: 2.0),
         ),
       ),
       body: SafeArea(
@@ -53,6 +52,7 @@ class _InputPageState extends State<InputPage> {
                         gender: 'MALE',
                         icon: FontAwesomeIcons.mars,
                       ),
+                      margin: EdgeInsets.fromLTRB(15.0, 15.0, 7.5, 7.5),
                     ),
                   ),
                   Expanded(
@@ -69,6 +69,7 @@ class _InputPageState extends State<InputPage> {
                         gender: 'FEMALE',
                         icon: FontAwesomeIcons.venus,
                       ),
+                      margin: EdgeInsets.fromLTRB(7.5, 15.0, 15.0, 7.5),
                     ),
                   ),
                 ],
@@ -77,6 +78,7 @@ class _InputPageState extends State<InputPage> {
             Expanded(
               child: ReusableCard(
                 colour: kActiveCardColor,
+                margin: EdgeInsets.fromLTRB(15.0, 7.5, 15.0, 7.5),
                 cardChild: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -121,6 +123,7 @@ class _InputPageState extends State<InputPage> {
                   Expanded(
                     child: ReusableCard(
                       colour: kActiveCardColor,
+                      margin: EdgeInsets.fromLTRB(15.0, 7.5, 7.5, 15.0),
                       cardChild: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -163,6 +166,7 @@ class _InputPageState extends State<InputPage> {
                   Expanded(
                     child: ReusableCard(
                       colour: kActiveCardColor,
+                      margin: EdgeInsets.fromLTRB(7.5, 7.5, 15.0, 15.0),
                       cardChild: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -212,13 +216,15 @@ class _InputPageState extends State<InputPage> {
                     CalculatorBrain(height: height, weight: weight);
 
                 Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => ResultsPage(
-                              bmiResult: calc.calculateBMI(),
-                              resultText: calc.getResult(),
-                              interpretation: calc.getInterpretation(),
-                            )));
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ResultsPage(
+                      bmiResult: calc.calculateBMI(),
+                      resultText: calc.getResult(),
+                      interpretation: calc.getInterpretation(),
+                    ),
+                  ),
+                );
               },
             ),
           ],
