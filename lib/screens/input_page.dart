@@ -5,6 +5,7 @@ import '../components/icon_content.dart';
 import '../components/reusable_card.dart';
 import '../components/bottom_button.dart';
 import '../components/icon_button.dart';
+import '../components/left_drawer.dart';
 import '../calculator_brain.dart';
 import '../constants.dart';
 import './results_page.dart';
@@ -25,11 +26,20 @@ class _InputPageState extends State<InputPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: LeftDrawer(),
       appBar: AppBar(
         centerTitle: true,
         title: Text(
           'BMI CALCULATOR',
         ),
+        leading: Builder(builder: (BuildContext context) {
+          return IconButton(
+            icon: Icon(Icons.menu),
+            onPressed: () {
+              Scaffold.of(context).openDrawer();
+            },
+          );
+        }),
       ),
       body: SafeArea(
         child: Column(
