@@ -37,7 +37,7 @@ class LeftDrawer extends StatelessWidget {
               Expanded(
                 flex: 2,
                 child: Text(
-                  'Commonly accepted BMI ranges are given below:\nUnderweight: <18.5\nNormal Weight: 18.5 to 25\nOverweight: >25',
+                  'Commonly accepted BMI ranges are given below:\nUnderweight: <18.5\nNormal Weight: 18.5 to 25\nOverweight: >25\nModerately Obese: >30\nExtremely Obese: >35',
                   style: TextStyle(fontSize: 15.0),
                   textAlign: TextAlign.justify,
                 ),
