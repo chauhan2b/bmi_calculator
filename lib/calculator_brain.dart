@@ -13,17 +13,25 @@ class CalculatorBrain {
   }
 
   String getResult() {
-    if (_bmi >= 25) {
-      return 'Overweight';
+    if (_bmi >= 35) {
+      return 'EXTREMELY OBESE';
+    } else if (_bmi > 30) {
+      return 'MODERATELY OBESE';
+    } else if (_bmi > 25) {
+      return 'OVERWEIGHT';
     } else if (_bmi > 18.5) {
-      return 'Normal';
+      return 'NORMAL';
     } else {
-      return 'Underweight';
+      return 'UNDERWEIGHT';
     }
   }
 
   String getInterpretation() {
-    if (_bmi >= 25) {
+    if (_bmi >= 35) {
+      return 'Damn bro! You\'re fat as hell.';
+    } else if (_bmi >= 30) {
+      return 'Eat less and work out more to lose all that fat baby!';
+    } else if (_bmi >= 25) {
       return 'You have a higher than normal body weight. Try to exercise more.';
     } else if (_bmi > 18.5) {
       return 'You have a normal body weight. Good job.';

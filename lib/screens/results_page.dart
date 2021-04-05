@@ -15,6 +15,22 @@ class ResultsPage extends StatelessWidget {
   final String resultText;
   final String interpretation;
 
+  Color getColor() {
+    if (resultText == 'EXTREMELY OBESE') {
+      return Colors.redAccent;
+    } else if (resultText == 'MODERATELY OBESE') {
+      return Colors.deepOrangeAccent;
+    } else if (resultText == 'OVERWEIGHT') {
+      return Colors.orangeAccent;
+    } else if (resultText == 'NORMAL') {
+      return Colors.greenAccent;
+    } else if (resultText == 'UNDERWEIGHT') {
+      return Colors.yellowAccent;
+    } else {
+      return Colors.white;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,8 +63,10 @@ class ResultsPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    resultText.toUpperCase(),
-                    style: kResultTextStyle,
+                    resultText,
+                    style: kResultTextStyle.copyWith(
+                      color: getColor(),
+                    ),
                   ),
                   Text(
                     bmiResult,
