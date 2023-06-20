@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../constants.dart';
 
 class IconContent extends StatelessWidget {
-  IconContent({this.gender, this.icon});
+  IconContent({required this.gender, required this.icon});
 
   final String gender;
   final IconData icon;

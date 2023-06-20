@@ -6,9 +6,9 @@ import '../components/bottom_button.dart';
 
 class ResultsPage extends StatelessWidget {
   ResultsPage({
-    @required this.bmiResult,
-    @required this.resultText,
-    @required this.interpretation,
+    required this.bmiResult,
+    required this.resultText,
+    required this.interpretation,
   });
 
   final String bmiResult;
@@ -56,6 +56,7 @@ class ResultsPage extends StatelessWidget {
           Expanded(
             flex: 5,
             child: ReusableCard(
+              onPress: () {},
               colour: kActiveCardColor,
               margin: EdgeInsets.all(15.0),
               cardChild: Column(
@@ -72,10 +73,13 @@ class ResultsPage extends StatelessWidget {
                     bmiResult,
                     style: kBMITextStyle,
                   ),
-                  Text(
-                    interpretation,
-                    textAlign: TextAlign.center,
-                    style: kBodyTextStyle,
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 8.0),
+                    child: Text(
+                      interpretation,
+                      textAlign: TextAlign.center,
+                      style: kBodyTextStyle,
+                    ),
                   )
                 ],
               ),

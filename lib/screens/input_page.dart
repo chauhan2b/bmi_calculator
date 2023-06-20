@@ -18,7 +18,7 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
-  Gender selectedGender;
+  Gender? selectedGender;
   int height = 180;
   int weight = 60;
   int age = 25;
@@ -87,6 +87,7 @@ class _InputPageState extends State<InputPage> {
             ),
             Expanded(
               child: ReusableCard(
+                onPress: () {},
                 colour: kActiveCardColor,
                 margin: EdgeInsets.fromLTRB(15.0, 7.5, 15.0, 7.5),
                 cardChild: Column(
@@ -132,6 +133,7 @@ class _InputPageState extends State<InputPage> {
                 children: [
                   Expanded(
                     child: ReusableCard(
+                      onPress: () {},
                       colour: kActiveCardColor,
                       margin: EdgeInsets.fromLTRB(15.0, 7.5, 7.5, 15.0),
                       cardChild: Column(
@@ -175,6 +177,7 @@ class _InputPageState extends State<InputPage> {
                   ),
                   Expanded(
                     child: ReusableCard(
+                      onPress: () {},
                       colour: kActiveCardColor,
                       margin: EdgeInsets.fromLTRB(7.5, 7.5, 15.0, 15.0),
                       cardChild: Column(
